@@ -1,0 +1,272 @@
+.links-section .table {
+    border-radius: 6px;
+    overflow: hidden;
+}
+.links-section .table-striped tbody tr:nth-of-type(odd) {
+    background: #f5f5f5;
+}
+.links-section .table .thead-dark th {
+    color: #fff;
+    background-color: #c78c32;
+    border-color: #c78c32;
+}
+.avater-section {
+    /*display: flex;*/
+    /*align-items: center;
+    justify-content: center;*/
+    text-align: center;
+  background: #f5f5f5;
+  padding-top:120px;
+  padding-bottom:120px;
+    /*height:500px;*/
+}
+    .avater-section .box-avater .img-error {
+        width:300px;
+        margin-bottom: 30px;
+        opacity: .88;
+    }
+    .avater-section .box-avater .error-text {
+        color: #ff8383;
+        font-weight: 700;
+        font-size: 33px;
+        letter-spacing: 0px;
+    }
+    .avater-section .box-avater .sucess-text {
+        color: #43ac50;
+        font-weight: 700;
+        font-size: 33px;
+        letter-spacing: 0px;
+    }
+.avater-section .box-avater .about-btn {
+    margin-top: 64px;
+}
+        .avater-section .box-avater .about-btn .default-btn {
+            margin-left: 46px;
+        }
+    .avater-section .box-avater .about-btn .optional-btn {
+        margin-left: 0px;
+    }
+.home-banner-three .creative-shape {
+    display: none;
+}
+.events-details-desc .events-details-footer .article-share .social li a {
+    text-align: center;
+    font-size: 20px;
+}
+    .events-details-desc .events-details-footer .article-share .social li a i, .events-details-desc .events-details-footer .article-share .social li a i.bx.bxl-whatsapp {
+        vertical-align: baseline;
+        line-height: 1;
+        font-size: unset !important;
+        top: 0 !important;
+    }
+.home-banner-three .home-slides.owl-theme .owl-dots .owl-dot span, .home-banner-three .home-slides-four.owl-theme .owl-dots .owl-dot span {
+    border: 2px solid #ffffff;
+}
+    .home-banner-three .home-slides.owl-theme .owl-dots .owl-dot span::before, .home-banner-three .home-slides-four.owl-theme .owl-dots .owl-dot span::before {
+        background-color: #ffffff;
+    }
+.map-img .location.location7 {
+    right: 25%;
+    left: auto;
+    top: 88%;
+}
+.map-img .location.location8 {
+    right: 97%;
+    left: auto;
+    top: 15%;
+}
+.map-img .location.location9 {
+    right: 92%;
+    left: auto;
+    top: 98%;
+}
+.map-img .location.location10 {
+    right: 68%;
+    left: auto;
+    top: 52%;
+}
+.map-img .location.location11 {
+    right: 63%;
+    left: auto;
+    top: 30%;
+}
+.map-img .location.location12 {
+    right: 64%;
+    left: auto;
+    top: 69%;
+}
+.map-img .location.location13 {
+    right: 49%;
+    left: auto;
+    top: 36%;
+}
+.map-img .location.location14 {
+    right: 55%;
+    left: auto;
+    top: 2%;
+}
+.map-img .location.location15 {
+    right: 93%;
+    left: auto;
+    top: 56%;
+}
+.map-img .location.location16 {
+    right: 42%;
+    left: auto;
+    top: 77%;
+}
+.map-img .location.location17 {
+    right: 30%;
+    left: auto;
+    top: 65%;
+}
+.map-img .location.location18 {
+    right: 25%;
+    left: auto;
+    top: 50%;
+}
+.map-img .location.location19 {
+    right: 68%;
+    left: auto;
+    top: 86%;
+}
+.map-img .location a .location-info {
+    width: 120px;
+    padding: 5px 10px;
+}
+.map-img .location a .location-info h5 {
+    font-size: 12px;
+}
+@media (max-width: 575px) {
+    .avater-section .box-avater .img-error {
+        width: 220px;
+    }
+    .avater-section .box-avater .about-btn .default-btn {
+        margin-left: 0;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .avater-section .box-avater .about-btn .optional-btn {
+    
+        display: block;
+    }
+    .map-img{
+        display:none;
+    }
+    }
+@media (max-width: 767px) {
+    .links-section .table-responsive .table td, .links-section .table-responsive .table th {
+        font-size: 10px;
+    }
+
+    .map-img .location a .location-info {
+        width: 78px !important;
+        left: -30px !important;
+    }
+
+        .map-img .location a .location-info h5 {
+            font-size: 8px;
+        }
+
+    .map-img .location a::before {
+        border: 2px solid #43ac50 !important;
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    .map-img .location a .location-info::before {
+        bottom: -6px !important;
+        width: 12px !important;
+        height: 12px !important;
+    }
+}
+/*****rtl*****/
+
+
+.ltr .avater-section .box-avater .about-btn .default-btn {
+    margin-right: 46px !important;
+    margin-left: unset !important;
+}
+
+.ltr .avater-section .box-avater .about-btn .optional-btn {
+    margin-right: 0px !important;
+    margin-left: unset !important
+}
+.ltr .map-img .location {
+    left: 46% !important;
+    right: auto !important;
+}
+.ltr .map-img .location.location7 {
+    right: auto !important;
+    left: 25% !important;
+}
+
+.ltr .map-img .location.location8 {
+    left: 8% !important;
+    right: auto !important;
+}
+
+    .ltr .map-img .location.location9 {
+        left: 11% !important;
+        right: auto !important;
+    }
+
+.ltr .map-img .location.location10 {
+    left: 68% !important;
+    right: auto !important;
+}
+
+.ltr .map-img .location.location11 {
+    left: 33% !important;
+    right: auto !important;
+}
+
+.ltr .map-img .location.location12 {
+    left: 64% !important;
+    right: auto !important;
+}
+
+.ltr .map-img .location.location13 {
+    left: 49% !important;
+    right: auto !important;
+}
+
+    .ltr .map-img .location.location14 {
+        left: 50% !important;
+        right: auto !important;
+    }
+
+    .ltr .map-img .location.location15 {
+        left: 85% !important;
+        top: 62% !important;
+        right: auto !important;
+    }
+
+.ltr .map-img .location.location16 {
+    left: 42% !important;
+    right: auto !important;
+}
+
+.ltr .map-img .location.location17 {
+    left: 30% !important;
+    right: auto !important;
+}
+
+.ltr .map-img .location.location18 {
+    left: 25% !important;
+    right: auto !important;
+}
+
+.ltr .map-img .location.location19 {
+    left: 68% !important;
+    right: auto !important;
+}
+
+@media (max-width: 575px) {
+
+    .ltr .avater-section .box-avater .about-btn .default-btn {
+        margin-right: 0 !important;
+    }
+
+}
+
