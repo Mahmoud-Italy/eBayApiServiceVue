@@ -59,60 +59,70 @@
 
             <div class="content-container">
                 <div class="main mb-30">
+
+                    <!-- Search result -->
                     <div class="search-result-status mb-20" 
                         v-if="!pgLoading">
                         <span><b>{{ total }}</b> Search Results Found</span>
                     </div>
-                    
-                        <div v-if="pgLoading">
-                            <div class="loader">
-                                <span class="loader-lg"></span>
-                            </div>
+                    <!-- ENd Search result -->
+                        
+                    <!-- Loading -->
+                    <div v-if="pgLoading">
+                        <div class="loader">
+                            <span class="loader-lg"></span>
                         </div>
+                    </div>
+                    <!-- End Loading -->
 
-                        <div v-if="!pgLoading" class="product-grid-4">
-                            <div class="product-card"
-                                v-for="(row, index) in rows"
-                                :key="index">
+                    <!-- Product Card -->
+                    <div v-if="!pgLoading" class="product-grid-4">
+                        <div class="product-card"
+                            v-for="(row, index) in rows"
+                            :key="index">
 
-                                <div class="product-image">
-                                    <a  :href="row.viewItemURL" 
+                            <div class="product-image">
+                                <a  :href="row.viewItemURL" 
+                                    target="_blank" 
+                                    :title="row.title">
+                                    <img :src="(row.galleryURL) ? row.galleryURL : default_img" 
+                                        :alt="row.title" />
+                                </a>
+                            </div>
+
+                            <div class="product-information">
+                                <div class="product-name">
+                                    <a :href="row.viewItemURL" 
                                         target="_blank" 
                                         :title="row.title">
-                                        <img :src="(row.galleryURL) ? row.galleryURL : default_img" 
-                                             :alt="row.title"
-                                            />
+                                        <span>{{ row.title }}</span>
                                     </a>
+                                    <p class="sticker3">
+                                        {{ (row.primaryCategory) ? row.primaryCategory.categoryName : '' }}
+                                    </p>
+                                    <p class="sticker2">{{ row.globalId }}</p>
                                 </div>
-
-                                <div class="product-information">
-                                    <div class="product-name">
-                                        <a :href="row.viewItemURL" 
-                                            target="_blank" 
-                                            :title="row.title">
-                                            <span>{{ row.title }}</span>
-                                        </a>
-                                        <p class="sticker3">{{ row.primaryCategory.categoryName }}</p>
-                                        <p class="sticker2">{{ row.globalId }}</p>
-                                    </div>
-                                    <div class="product-price">
-                                        <span>$ {{ row.sellingStatus.currentPrice }}</span>
-                                    </div>
+                                <div class="product-price">
+                                    <span>$ {{ (row.sellingStatus) ? row.sellingStatus.currentPrice : '' }}</span>
                                 </div>
                             </div>
+
                         </div>
+                    </div>
+                    <!-- End Product Card -->
 
-
-                        <div v-if="!pgLoading && loadMore" class="loadMore">
-                            <button class="btn btn-primary"
-                                    :disabled="btnLoading"
-                                    @click="btnLoadMore()">
-                                <span v-if="btnLoading">
-                                    <div class="loader loader-md"></div>
-                                </span>
-                                <span v-if="!btnLoading">Load More</span>
-                            </button>
-                        </div>                    
+                    <!-- Load More -->
+                    <div v-if="!pgLoading && loadMore" class="loadMore">
+                        <button class="btn btn-primary"
+                                :disabled="btnLoading"
+                                @click="btnLoadMore()">
+                            <span v-if="btnLoading">
+                                <div class="loader loader-md"></div>
+                            </span>
+                            <span v-if="!btnLoading">Load More</span>
+                        </button>
+                    </div>       
+                    <!-- End Load More -->             
                 
                 </div>
             </div>
@@ -189,11 +199,13 @@
                 .then(res => {
                     this.pgLoading = false;
                     this.btnLoading = false;
+                    this.loadMore = false;
+                    this.loadMoreClicked = false;
 
                     if(res.data.items.ack == 'Success') {
                         this.item = res.data.items;
                         if(this.loadMoreClicked) {
-                            this.rows = vm.rows.concat(res.data.items.searchResult.item); // concat with loadmore
+                            this.rows = vm.rows.concat(res.data.items.searchResult.item);
                         } else {
                             this.rows = res.data.items.searchResult.item;
                         }
