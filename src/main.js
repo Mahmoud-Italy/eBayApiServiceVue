@@ -23,7 +23,7 @@ Vue.use(AxiosPlugin)
 
 
 // baseURL
-window.baseURL = 'https://ebayapi.mazadak.net/v1';
+window.baseURL = 'http://ebayapi.mazadak.net/v1';
 Vue.config.productionTip = false
 
 
