@@ -112,7 +112,7 @@
                     <!-- End Product Card -->
 
                     <!-- Load More -->
-                    <div v-if="!pgLoading && loadMore" class="loadMore">
+                    <div v-if="!pgLoading && loadMore && total > 0" class="loadMore">
                         <button class="btn btn-primary"
                                 :disabled="btnLoading"
                                 @click="btnLoadMore()">
@@ -199,8 +199,6 @@
                 .then(res => {
                     this.pgLoading = false;
                     this.btnLoading = false;
-                    this.loadMore = false;
-                    this.loadMoreClicked = false;
 
                     if(res.data.items.ack == 'Success') {
                         this.item = res.data.items;
