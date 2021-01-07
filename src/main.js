@@ -23,7 +23,7 @@ Vue.use(AxiosPlugin)
 
 
 // baseURL
-window.baseURL = 'http://localhost:8002/v1';
+window.baseURL = 'https://ebayapi.mazadak.net/v1';
 Vue.config.productionTip = false
 
 
